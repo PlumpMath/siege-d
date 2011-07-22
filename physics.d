@@ -38,6 +38,12 @@ class Box : Entity
         physicsBody.setPos(x, y);
     }
 
+    override void evDraw()
+    {
+        if (visible) draw();
+        if (overlay) drawDBG();
+    }
+
     void drawDBG()
     {
         shape.drawDBG();
@@ -120,12 +126,6 @@ void main()
     foreach (i; iota(224, 448, 64)) entities ~= new Floor(sprHazardWall, i, 320);
 
     auto controller = new Controller();
-    while (sgcore.loop()) {
-        if (overlay) {
-            foreach (entity; entities) entity.drawDBG();
-        }
-        window.swapBuffers();
-        draw.clear();
-    }
+    sgcore.run();
 }
 

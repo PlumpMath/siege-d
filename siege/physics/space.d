@@ -18,14 +18,24 @@ class Space
         sgPhysicsSpaceDestroy(handle);
     }
 
-    void step(float time)
+    @property void step(float time)
     {
         sgPhysicsSpaceStep(handle, time);
+    }
+
+    @property void damping(float d)
+    {
+        sgPhysicsSpaceSetDamping(handle, d);
     }
 
     void setGravity(float x, float y)
     {
         sgPhysicsSpaceSetGravity(handle, x, y);
+    }
+
+    void rehash()
+    {
+        sgPhysicsSpaceRehash(handle);
     }
 }
 

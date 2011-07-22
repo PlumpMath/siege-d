@@ -30,5 +30,7 @@ void sgPhysicsSpaceDestroy(SGPhysicsSpace* space);
 
 void sgPhysicsSpaceStep(SGPhysicsSpace* space, float time);
 void sgPhysicsSpaceSetGravity(SGPhysicsSpace* space, float x, float y);
-//void sgPhysicsSpaceGetGravity(SGPhysicsSpace* space, float* x, float* y);
+void sgPhysicsSpaceSetDamping(SGPhysicsSpace* space, float damping);
+
+void sgPhysicsSpaceRehash(SGPhysicsSpace* space);
 
