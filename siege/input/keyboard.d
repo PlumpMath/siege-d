@@ -47,3 +47,40 @@ bool characterRelease(dchar c)
     return sgKeyboardCharRelease(c);
 }
 
+enum Key
+{
+    Unknown = SG_KEYBOARD_KEY_UNKNOWN,
+    Space = SG_KEYBOARD_KEY_SPACE,
+    Escape = SG_KEYBOARD_KEY_ESC,
+    F1 = SG_KEYBOARD_KEY_F1,
+    F2, F3, F4, F5, F6, F7, F8, F9, F10,
+    F11, F12, F13, F14, F15, F16, F17, F18, F19,
+    F20, F21, F22, F23, F24, F25,
+    Up = SG_KEYBOARD_KEY_UP,
+    Down, Left, Right,
+    LShift = SG_KEYBOARD_KEY_LSHIFT,
+    RShift = SG_KEYBOARD_KEY_RSHIFT,
+    LCtrl = SG_KEYBOARD_KEY_LCTRL,
+    RCtrl = SG_KEYBOARD_KEY_RCTRL,
+    LAlt = SG_KEYBOARD_KEY_LALT,
+    RAlt = SG_KEYBOARD_KEY_RALT,
+    Tab = SG_KEYBOARD_KEY_TAB,
+    Enter = SG_KEYBOARD_KEY_ENTER,
+    Backspace = SG_KEYBOARD_KEY_BACKSPACE,
+    Insert = SG_KEYBOARD_KEY_INSERT,
+    Delete = SG_KEYBOARD_KEY_DELETE,
+    Home = SG_KEYBOARD_KEY_HOME,
+    End = SG_KEYBOARD_KEY_END,
+    Pageup = SG_KEYBOARD_KEY_PAGEUP,
+    Pagedown = SG_KEYBOARD_KEY_PAGEDOWN,
+    KP0 = SG_KEYBOARD_KEY_KP0,
+    KP1, KP2, KP3, KP4, KP5, KP6, KP7, KP8, KP9,
+    KPAdd = SG_KEYBOARD_KEY_KP_ADD,
+    KPSubtract = SG_KEYBOARD_KEY_KP_SUBTRACT,
+    KPMultiply = SG_KEYBOARD_KEY_KP_MULTIPLY,
+    KPDivide = SG_KEYBOARD_KEY_KP_DIVIDE,
+    KPDecimal = SG_KEYBOARD_KEY_KP_DECIMAL,
+    KPEqual = SG_KEYBOARD_KEY_KP_EQUAL,
+    KPEnter = SG_KEYBOARD_KEY_KP_ENTER,
+}
+
