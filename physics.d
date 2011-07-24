@@ -14,7 +14,6 @@ class Box : Entity
 
     this(Sprite spr, float x, float y, float angle, float density, bool isStatic)
     {
-        super(0.0, SG_EVT_ALL);
         auto type = BodyType.Normal;
         if (isStatic) {
             type = (density == float.infinity) ? BodyType.Static : BodyType.Semistatic;
@@ -76,11 +75,6 @@ class Floor : Box
 
 class Controller : Entity
 {
-    this()
-    {
-        super(0.0, SG_EVT_ALL);
-    }
-
     override void evMouseButtonLeftPress()
     {
         entities ~= new MetalBox(mouse.x(), mouse.y(), 0.0);

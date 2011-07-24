@@ -21,12 +21,18 @@ import siege.physics._body;
 import siege.physics.collision;
 import siege.util.angles;
 import siege.c.common;
+import siege.c.siege;
 import siege.c.core.entity;
 import siege.c.physics.collision;
 
 
 class Entity
 {
+    this()
+    {
+        this(0.0, SG_EVT_ALL);
+    }
+
     this(float priority, SGenum type)
     {
         mHandle = sgEntityCreate(priority, type);
