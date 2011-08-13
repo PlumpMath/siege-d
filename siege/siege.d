@@ -21,6 +21,7 @@ import draw = siege.graphics.draw;
 import keyboard = siege.input.keyboard;
 import mouse = siege.input.mouse;
 import joystick = siege.input.joystick;
+import time = siege.util.time;
 
 import siege.audio.buffer;
 import siege.audio.source;

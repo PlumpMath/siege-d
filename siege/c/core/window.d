@@ -45,3 +45,7 @@ SGuint sgWindowGetHeight();
 
 void sgWindowSwapBuffers();
 
+SGfloat sgWindowGetFPSLimit();
+void sgWindowSetFPSLimit(SGfloat);
+SGfloat sgWindowGetFPS();
+

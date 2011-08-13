@@ -78,3 +78,19 @@ void swapBuffers()
 {
     sgWindowSwapBuffers();
 }
+
+@property float FPSLimit()
+{
+    return sgWindowGetFPSLimit();
+}
+
+@property void FPSLimit(float f)
+{
+    sgWindowSetFPSLimit(f);
+}
+
+@property float FPS()
+{
+    return sgWindowGetFPS();
+}
+

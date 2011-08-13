@@ -106,6 +106,7 @@ void main()
         sgcore.deinit();
     }
     window.title = "SIEGE D Physics Demo - Press F1 for debug overlay";
+    window.FPSLimit = 60.0f;
 
     sprCrateSmall = new Sprite("data/sprites/CrateSmall.png");
     sprFloorMetalPlate = new Sprite("data/sprites/FloorMetalPlate.png");
@@ -113,7 +114,6 @@ void main()
     sprHazardWall = new Sprite("data/sprites/HazardWall.png");
     sprPacman = new Sprite("data/sprites/Pacman.png");
     sprSupportBar = new Sprite("data/sprites/SupportBar.png");
-
 
     foreach (i; iota(32, 640, 64)) entities ~= new Floor(sprFloorMetalPlate, i, 448);
     foreach (i; iota(224, 448, 64)) entities ~= new Floor(sprSupportBar, i, 384);
