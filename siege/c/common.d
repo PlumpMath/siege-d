@@ -253,14 +253,6 @@ enum
     SG_MOUSE_BUTTON_MIDDLE = 3,
 }
 
-/*typedef struct SGModuleFlags
-{
-    // 0-terminated
-    SGenum* sAudioFormat;
-    SGenum* sGraphicsPrimitive;
-    SGenum* sGraphicsTextures;
-} SGModuleFlags;*/
-
 struct SGModuleInfo
 {
     SGushort vmajor;
@@ -273,8 +265,6 @@ struct SGModuleInfo
 
     SGuint type;
     const(char)* name;
-    //char* longname;
-    //char* description;
 
     void* data;
 }
