@@ -39,6 +39,7 @@ SGAudioSourceDispatch* _sgAudioSourceGetFreeDispatch(SGAudioSource* source);
 
 SGAudioSource* sgAudioSourceCreate(float priority, float volume, float pitch, SGbool looping);
 void sgAudioSourceDestroy(SGAudioSource* source);
+void sgAudioSourceDestroyLazy(SGAudioSource* source);
 void sgAudioSourcePlay(SGAudioSource* source);
 void sgAudioSourcePause(SGAudioSource* source);
 void sgAudioSourceRewind(SGAudioSource* source);
@@ -50,6 +51,8 @@ SGbool sgAudioSourceIsStopped(SGAudioSource* source);
 
 void sgAudioSourceQueueBuffers(SGAudioSource* source, SGAudioBuffer** buffers, size_t numbuffers);
 void sgAudioSourceQueueBuffer(SGAudioSource* source, SGAudioBuffer* buffer);
+void sgAudioSourceUnqueueBuffers(SGAudioSource* source, size_t numbuffers);
+void sgAudioSourceUnqueueBuffer(SGAudioSource* source);
 
 void sgAudioSourceSetPosition3f(SGAudioSource* source, float x, float y, float z);
 void sgAudioSourceSetPosition2f(SGAudioSource* source, float x, float y);

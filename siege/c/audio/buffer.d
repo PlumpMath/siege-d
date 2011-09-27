@@ -23,9 +23,6 @@ struct SGAudioBuffer
     void* handle;
 }
 
-SGbool _sgAudioBufferInit();
-SGbool _sgAudioBufferDeinit();
-
 SGAudioBuffer* sgAudioBufferCreateFile(const(char)* fname);
 void sgAudioBufferDestroy(SGAudioBuffer* buffer);
 
