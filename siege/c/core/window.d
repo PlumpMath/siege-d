@@ -30,10 +30,10 @@ SGbool sgWindowOpen(SGuint width, SGuint height, SGuint bpp, SGenum flags);
 SGbool sgWindowIsOpened();
 void sgWindowClose();
 
-void sgWindowSetTitleF(const char* format, ...);
-void sgWindowSetTitleFV(const char* format, va_list args);
+void sgWindowSetTitlef(const char* format, ...);
+void sgWindowSetTitlefv(const char* format, va_list args);
 void sgWindowSetTitle(const char* title);
-const(char*) sgWindowGetTitle();
+const(char)* sgWindowGetTitle();
 
 void sgWindowSetSize(SGuint width, SGuint height);
 void sgWindowGetSize(SGuint* width, SGuint* height);
