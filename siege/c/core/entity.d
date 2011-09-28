@@ -26,7 +26,6 @@ import siege.c.physics.collision;
 
 struct SGEntity
 {
-    SGenum type;
     SGbool active;
     SGbool pausable;
     SGEvent* event;
@@ -123,7 +122,7 @@ SGvoid _sg_evDraw(SGEntity*);
 SGbool _sgEntityInit();
 SGbool _sgEntityDeinit();
 
-SGEntity* sgEntityCreate(float, SGenum);
+SGEntity* sgEntityCreate(float);
 SGvoid sgEntityDestroy(SGEntity*);
 
 SGvoid sgEntitySetSprite(SGEntity*, SGSprite*);
