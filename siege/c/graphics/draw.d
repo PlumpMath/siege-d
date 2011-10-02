@@ -35,35 +35,55 @@ void sgDrawColor4ub(SGubyte r, SGubyte g, SGubyte b, SGubyte a);
 void sgDrawColor3ub(SGubyte r, SGubyte g, SGubyte b);
 void sgDrawColor2ub(SGubyte g, SGubyte a);
 void sgDrawColor1ub(SGubyte g);
-void sgDrawTexCoord2f(float x, float y);
+void sgDrawColor4fv(float* rgba);
+void sgDrawColor3fv(float* rgb);
+void sgDrawColor2fv(float* ga);
+void sgDrawColor1fv(float* g);
+void sgDrawColor4ubv(SGubyte* rgba);
+void sgDrawColor3ubv(SGubyte* rgb);
+void sgDrawColor2ubv(SGubyte* ga);
+void sgDrawColor1ubv(SGubyte* g);
+void sgDrawTexCoord2f(float s, float t);
+void sgDrawTexCoord2fv(float* st);
 void sgDrawVertex3f(float x, float y, float z);
 void sgDrawVertex2f(float x, float y);
+void sgDrawVertex3fv(float* xyz);
+void sgDrawVertex2fv(float* xy);
 void sgDrawClear4f(float r, float g, float b, float a);
 void sgDrawClear3f(float r, float g, float b);
 void sgDrawClear2f(float g, float a);
 void sgDrawClear1f(float g);
+void sgDrawClear4fv(float* rgba);
+void sgDrawClear3fv(float* rgb);
+void sgDrawClear2fv(float* ga);
+void sgDrawClear1fv(float* g);
 void sgDrawClear4ub(SGubyte r, SGubyte g, SGubyte b, SGubyte a);
 void sgDrawClear3ub(SGubyte r, SGubyte g, SGubyte b);
 void sgDrawClear2ub(SGubyte g, SGubyte a);
 void sgDrawClear1ub(SGubyte g);
+void sgDrawClear4ubv(SGubyte* rgba);
+void sgDrawClear3ubv(SGubyte* rgb);
+void sgDrawClear2ubv(SGubyte* ga);
+void sgDrawClear1ubv(SGubyte* g);
 void sgDrawClear();
 
 void sgDrawSetBlendFunc(SGenum src, SGenum dst);
 void sgDrawSetBlendEquation(SGenum equation);
+void sgDrawSetDepthTest(SGbool test);
+void sgDrawSetSmooth(SGbool smooth);
 
 void sgDrawPoint(float x, float y);
 void sgDrawPointSetSize(float size);
-//float sgDrawPointGetSize();
 
 void sgDrawLine(float x1, float y1, float x2, float y2);
 void sgDrawLineSetWidth(float width);
-//float sgDrawLineGetWidth();
 
 void sgDrawTriangle(float x1, float y1, float x2, float y2, float x3, float y3, SGbool fill);
 
 void sgDrawQuad(float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4, SGbool fill);
 
 void sgDrawRectangle(float x1, float y1, float x2, float y2, SGbool fill);
+void sgDrawRectangleWH(float x, float y, float w, float h, SGbool fill);
 
 void sgDrawEllipse2R(float x, float y, float rx, float ry, SGbool fill);
 
