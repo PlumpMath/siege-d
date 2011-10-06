@@ -30,12 +30,12 @@ class Entity
 {
     this()
     {
-        this(0.0, SG_EVT_ALL);
+        this(0.0);
     }
 
-    this(float priority, SGenum type)
+    this(float priority)
     {
-        mHandle = sgEntityCreate(priority, type);
+        mHandle = sgEntityCreate(priority);
         prepareHandle();
     }
 

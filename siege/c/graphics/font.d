@@ -152,8 +152,9 @@ void sgFontPrintU16(SGFont* font, float x, float y, const SGwchar* text);
 void sgFontPrintU8(SGFont* font, float x, float y, const SGchar* text);
 void sgFontPrint(SGFont* font, float x, float y, const char* text);
 
+void sgFontPrintAligned(SGFont*, float, float, SGenum, const char*);
 void sgFontPrintAlignedf(SGFont* font, float x, float y, SGenum _align, const char* format, ...);
-void sgFontPrintAlignedfv(SGfont*, float, float, SGenum, const char*, va_list);
+void sgFontPrintAlignedfv(SGFont*, float, float, SGenum, const char*, va_list);
 // TODO: other widths. -Bernard.
 
 deprecated {

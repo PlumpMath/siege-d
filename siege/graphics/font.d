@@ -89,55 +89,26 @@ class Font
         print(x, y, s);
     }
 
-    void printCentered(float x, float y, string s)
+    void printAligned(float x, float y, int _align, string s)
     {
-        sgFontPrintCentered(handle, x, y, toStringz(s));
+        sgFontPrintAligned(handle, x, y, _align, toStringz(s));
     }
 
-    void writefCentered(Vs...)(float x, float y, string fmt, Vs vs)
+    void writefAligned(Vs...)(float x, float y, int _align, string fmt, Vs vs)
     {
         auto s = format(fmt, vs);
-        printCentered(x, y, s);
+        printAligned(x, y, _align, s);
     }
 
-    void cprintfCentered(Vs...)(float x, float y, string fmt, Vs vs)
+    void printfAligned(Vs...)(float x, float y, int _align, string fmt, Vs vs)
     {
         auto s = _cprintf(fmt, vs);
-        printCentered(x, y, s);
+        printAligned(x, y, _align, s);
     }
 
-    void printXCentered(float x, float y, string s)
+    void getPos(out float x, out float y, size_t index, string s)
     {
-        sgFontPrintXCentered(handle, x, y, toStringz(s));
-    }
-
-    void writefXCentered(Vs...)(float x, float y, string fmt, Vs vs)
-    {
-        auto s = format(fmt, vs);
-        printXCentered(x, y, s);
-    }
-
-    void cprintfXCentered(Vs...)(float x, float y, string fmt, Vs vs)
-    {
-        auto s = _cprintf(fmt, vs);
-        printXCentered(x, y, s);
-    }
-
-    void printYCentered(float x, float y, string s)
-    {
-        sgFontPrintYCentered(handle, x, y, toStringz(s));
-    }
-
-    void writefYCentered(Vs...)(float x, float y, string fmt, Vs vs)
-    {
-        auto s = format(fmt, vs);
-        printYCentered(x, y, s);
-    }
-
-    void cprintfYCentered(Vs...)(float x, float y, string fmt, Vs vs)
-    {
-        auto s = _cprintf(fmt, vs);
-        printYCentered(x, y, s);
+        sgFontGetPos(handle, &x, &y, index, toStringz(s));
     }
 
     void strSize(out float x, out float y, string s)
