@@ -37,4 +37,8 @@ void sgViewportDestroy(SGViewport*);
 void sgViewportSet4i4f(SGViewport*, SGuint, SGuint, SGuint, SGuint, float, float, float, float);
 void sgViewportSet4i(SGViewport*, SGuint, SGuint, SGuint, SGuint);
 void sgViewportReset(SGViewport*);
+void sgViewportSetWPos(SGViewport*, SGuint, SGuint);
+void sgViewportSetWSize(SGViewport*, SGuint, SGuint);
+void sgViewportSetPos(SGViewport*, float, float);
+void sgViewportSetSize(SGViewport*, float, float);
 
