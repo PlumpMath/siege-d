@@ -22,11 +22,12 @@ import siege.c.core.entity;
 struct SGPhysicsBody
 {
     void* handle;
-
     SGPhysicsSpace* space;
+    void* data;
 
     SGenum type;
-    void* data;
+
+    SGEntity* entity;
 }
 
 SGPhysicsBody* sgPhysicsBodyCreate(SGPhysicsSpace* space, SGenum type);
@@ -34,6 +35,9 @@ void sgPhysicsBodyDestroy(SGPhysicsBody* _body);
 
 void sgPhysicsBodySetData(SGPhysicsBody* _body, void* data);
 void* sgPhysicsBodyGetData(SGPhysicsBody* _body);
+
+void sgPhysicsBodySetSleeping(SGPhysicsBody*, SGbool);
+SGbool sgPhysicsBodyGetSleeping(SGPhysicsBody*);
 
 void sgPhysicsBodySetPos(SGPhysicsBody* _body, float x, float y);
 void sgPhysicsBodyGetPos(SGPhysicsBody* _body, float* x, float* y);
@@ -66,4 +70,7 @@ float sgPhysicsBodyGetMass(SGPhysicsBody* _body);
 
 void sgPhysicsBodySetMoment(SGPhysicsBody* _body, float moment);
 float sgPhysicsBodyGetMoment(SGPhysicsBody* _body);
+
+void sgPhysicsBodyApplyImpulse(SGPhysicsBody* _body, float jx, float jy, float rx, float ry);
+void sgPhysicsBodyApplyForce(SGPhysicsBody*, float, float, float, float);
 

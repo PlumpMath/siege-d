@@ -50,7 +50,20 @@ class Body
         sgPhysicsBodyGetVel(handle, &x, &y);
     }
 
+    void applyImpulse(float jx, float jy, float rx, float ry)
+    {
+        sgPhysicsBodyApplyImpulse(handle, jx, jy, rx, ry);
+    }
+
+    void applyForce(float jx, float jy, float rx, float ry)
+    {
+        sgPhysicsBodyApplyForce(handle, jx, jy, rx, ry);
+    }
+
     @property {
+        bool sleeping() { return sgPhysicsBodyGetSleeping(handle); }
+        void sleeping(bool val) { sgPhysicsBodySetSleeping(handle, val); }
+
         float x() { return sgPhysicsBodyGetPosX(handle); }
         void x(float val) { sgPhysicsBodySetPosX(handle, val); }
 
