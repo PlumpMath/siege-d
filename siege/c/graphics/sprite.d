@@ -39,6 +39,12 @@ SGSprite* sgSpriteCreateFile2f(const char* fname, float xoffset, float yoffset);
 SGSprite* sgSpriteCreateFile(const char* fname);
 void sgSpriteDestroy(SGSprite* sprite);
 
+SGbool sgSpriteAddFrameFile(SGSprite*, const char*);
+void sgSpriteSetImage(SGSprite*, float);
+float sgSpriteGetImage(SGSprite*);
+void sgSpriteSetSpeed(SGSprite*, float);
+float sgSpriteGetSpeed(SGSprite*);
+
 void sgSpriteDrawRads3f2f1f(SGSprite* sprite, float x, float y, float z, float xscale, float yscale, float angle);
 void sgSpriteDrawDegs3f2f1f(SGSprite* sprite, float x, float y, float z, float xscale, float yscale, float angle);
 void sgSpriteDrawRads2f2f1f(SGSprite* sprite, float x, float y, float xscale, float yscale, float angle);

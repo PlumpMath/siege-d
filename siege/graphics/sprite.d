@@ -53,6 +53,31 @@ class Sprite
         sgSpriteDestroy(handle);
     }
 
+    void addFrame(string fname)
+    {
+        sgSpriteAddFrameFile(handle, toStringz(fname));
+    }
+
+    void image(float val) @property
+    {
+        sgSpriteSetImage(handle, val);
+    }
+
+    float image()
+    {
+        return sgSpriteGetImage(handle);
+    }
+
+    void speed(float val) @property
+    {
+        sgSpriteSetSpeed(handle, val);
+    }
+
+    float speed()
+    {
+        return sgSpriteGetSpeed(handle);
+    }
+
     void draw(float x, float y)
     {
         sgSpriteDraw2f(handle, x, y);
