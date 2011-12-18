@@ -39,6 +39,11 @@ class Entity
         prepareHandle();
     }
 
+    ~this()
+    {
+        destroy();
+    }
+
     void destroy()
     {
         if (mHandle) {

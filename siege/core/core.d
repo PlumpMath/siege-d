@@ -31,14 +31,16 @@ bool loadModule(string name)
     return sgLoadModule(toStringz(name));
 }
 
-bool init(uint width, uint height, uint bpp, uint flags)
+private extern (C) void exitshim()
 {
-    return sgInit(width, height, bpp, flags);
+    sgDeinit();
 }
 
-bool deinit()
+bool init(uint width, uint height, uint bpp, uint flags)
 {
-    return sgDeinit();
+    import std.c.stdlib;
+    atexit(&exitshim);
+    return sgInit(width, height, bpp, flags);
 }
 
 int run()

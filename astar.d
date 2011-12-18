@@ -6,7 +6,6 @@ void main()
 {
     sgcore.loadModules("SDL", "OpenGL");
     sgcore.init(640, 480, 32, 0);
-    scope (exit) sgcore.deinit();
     window.title = "SIEGE D A-Star Demo";
 
     auto grid = new NavGrid(640 / 32, 480 / 32, true, false);

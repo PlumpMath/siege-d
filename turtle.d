@@ -6,7 +6,6 @@ void main()
 {
     sgcore.loadModules("SDL", "OpenGL");
     sgcore.init(640, 480, 32, 0);
-    scope (exit) sgcore.deinit();
 
     while (sgcore.loop()) {
         draw.clear();

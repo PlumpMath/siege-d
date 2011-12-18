@@ -32,10 +32,5 @@ class Space
     {
         sgPhysicsSpaceSetGravity(handle, x, y);
     }
-
-    void rehash()
-    {
-        sgPhysicsSpaceRehash(handle);
-    }
 }
 
