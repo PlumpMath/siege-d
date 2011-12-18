@@ -6,6 +6,7 @@ import siege.c.siege;
 __gshared Sprite sprCrateSmall, sprFloorMetalPlate, sprHazardWall, sprPacman, sprStrongboxSmall, sprSupportBar;
 __gshared Box[] entities;
 __gshared bool overlay = false;
+__gshared Font font;
 
 
 class Box : Entity
@@ -96,11 +97,16 @@ class Controller : Entity
     {
         evKeyboardKeyPress(key);
     }
+
+    override void evDraw()
+    {
+        font.cprintf(1.0, 10.0, "FPS: %.2f", window.FPS);
+    }
 }
 
 void main()
 {
-    sgcore.loadModules("SDL", "OpenGL", "DevIL", "Chipmunk");
+    sgcore.loadModules("SDL", "OpenGL", "DevIL", "Chipmunk", "Freetype");
     sgcore.init(640, 480, 32, 0);
     window.title = "SIEGE D Physics Demo - Press F1 for debug overlay";
     window.FPSLimit = 60.0f;
@@ -111,6 +117,7 @@ void main()
     sprHazardWall = new Sprite("data/sprites/HazardWall.png");
     sprPacman = new Sprite("data/sprites/Pacman.png");
     sprSupportBar = new Sprite("data/sprites/SupportBar.png");
+    font = new Font("data/fonts/DejaVuSans.ttf", 7.0);
 
     foreach (i; iota(32, 640, 64)) entities ~= new Floor(sprFloorMetalPlate, i, 448);
     foreach (i; iota(224, 448, 64)) entities ~= new Floor(sprSupportBar, i, 384);

@@ -27,7 +27,6 @@ private string _cprintf(Vs...)(string fmt, Vs vs)
     auto retval = snprintf(buf.ptr, buf.length, toStringz(fmt), vs);
     assert(retval >= 0);
     if (retval > buf.length) {
-        GC.free(buf);
         buf = new char[retval + 1];
         retval = snprintf(buf.ptr, buf.length, toStringz(fmt), vs);
         assert(retval >= 0);
