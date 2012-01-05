@@ -37,12 +37,12 @@ alias float  SGfloat;
 alias double SGdouble;
 
 const SG_INTERFACE_VMAJOR = 0;
-const SG_INTERFACE_VMINOR = 2;
-const SG_INTERFACE_VPATCH = 0;
-enum SG_VERSION_STRING = "0.2.0";
+const SG_INTERFACE_VMINOR = 3;
+const SG_INTERFACE_VPATCH = 3;
+enum SG_VERSION_STRING = "0.3.3";
 
-const SG_TRUE  = 1;
-const SG_FALSE = 0;
+const SG_TRUE  = true;
+const SG_FALSE = false;
 
 enum
 {

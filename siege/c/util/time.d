@@ -19,7 +19,11 @@ import siege.c.common;
 extern(C):
 
 enum SG_NANOSECONDS_IN_A_SECOND = 1000000000;
+enum SG_MICROSECONDS_IN_A_SECOND = 1000000;
+enum SG_MILLISECONDS_IN_A_SECOND = 1000;
 
 SGlong sgGetTime();
-void sgSleep(SGint);
-
+void sgNSleep(SGulong);
+void sgUSleep(SGulong);
+void sgMSleep(SGulong);
+void sgSleep(SGulong);
