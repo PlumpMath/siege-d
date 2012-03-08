@@ -5,7 +5,8 @@ import siege.siege;
 void main()
 {
     sgcore.loadModules("SDL", "OpenGL");
-    sgcore.init(640, 480, 32, 0);
+    sgcore.init(0);
+    window.open(640, 480, 32, 0);
 
     while (sgcore.loop()) {
         draw.clear();

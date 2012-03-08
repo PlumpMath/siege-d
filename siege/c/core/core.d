@@ -18,8 +18,12 @@ import siege.c.common;
 
 extern(C):
 
+void sgGetVersionv(SGushort* _version);
+void sgGetVersion(SGushort* vmajor, SGushort* vminor, SGushort* vpatch);
+const(char)* sgGetVersionString();
+
 SGbool sgLoadModule(const char* name);
-SGbool sgInit(SGuint width, SGuint height, SGuint bpp, SGenum flags);
+SGbool sgInit(SGenum flags);
 SGbool sgDeinit();
 
 SGint sgRun();

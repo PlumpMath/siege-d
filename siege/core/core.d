@@ -16,7 +16,23 @@ module siege.core.core;
 
 import siege.c.siege;
 
+import std.conv;
 import std.string;
+
+void getVersion(out ushort _version)
+{
+    sgGetVersionv(&_version);
+}
+
+void getVersion(out ushort vmajor, out ushort vminor, out ushort vpatch)
+{
+    sgGetVersion(&vmajor, &vminor, &vpatch);
+}
+
+string getVersionString()
+{
+    return to!string(sgGetVersionString());
+}
 
 uint loadModules(string[] names...)
 {
@@ -36,11 +52,11 @@ private extern (C) void exitshim()
     sgDeinit();
 }
 
-bool init(uint width, uint height, uint bpp, uint flags)
+bool init(uint flags)
 {
     import std.c.stdlib;
     atexit(&exitshim);
-    return sgInit(width, height, bpp, flags);
+    return sgInit(flags);
 }
 
 int run()
