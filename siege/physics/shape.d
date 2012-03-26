@@ -23,12 +23,42 @@ class Shape
         this.handle = handle;
     }
 
-    float areaS()
+    @property void group(uint g)
+    {
+        sgPhysicsShapeSetGroup(handle, g);
+    }
+
+    @property uint group()
+    {
+        return sgPhysicsShapeGetGroup(handle);
+    }
+
+    @property void friction(float f)
+    {
+        sgPhysicsShapeSetFriction(handle, f);
+    }
+
+    @property float friction()
+    {
+        return sgPhysicsShapeGetFriction(handle);
+    }
+
+    @property void restitution(float r)
+    {
+        sgPhysicsShapeSetRestitution(handle, r);
+    }
+
+    @property float restitution()
+    {
+        return sgPhysicsShapeGetRestitution(handle);
+    }
+
+    @property float areaS()
     {
         return sgPhysicsShapeGetAreaS(handle);
     }
 
-    float areaU()
+    @property float areaU()
     {
         return sgPhysicsShapeGetAreaU(handle);
     }
@@ -46,6 +76,11 @@ class Shape
     float momentDensity(float density)
     {
         return sgPhysicsShapeGetMomentDensity(handle, density);
+    }
+
+    void getBoundingBox(out float t, out float l, out float b, out float r)
+    {
+        sgPhysicsShapeGetBBox(handle, &t, &l, &b, &r);
     }
 
     void drawDBG()

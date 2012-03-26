@@ -25,12 +25,14 @@ struct SGPhysicsSpace
 SGbool _sgPhysicsSpaceInit();
 SGbool _sgPhysicsSpaceDeinit();
 
+SGPhysicsSpace* sgPhysicsSpaceGetDefault();
 SGPhysicsSpace* sgPhysicsSpaceCreate();
 void sgPhysicsSpaceDestroy(SGPhysicsSpace* space);
 
 void sgPhysicsSpaceStep(SGPhysicsSpace* space, float time);
 void sgPhysicsSpaceSetGravity(SGPhysicsSpace* space, float x, float y);
 void sgPhysicsSpaceSetDamping(SGPhysicsSpace* space, float damping);
+void sgPhysicsSpaceSetIterations(SGPhysicsSpace* space, uint iterations);
 
 void sgPhysicsSpaceRehash(SGPhysicsSpace* space);
 

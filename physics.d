@@ -7,7 +7,10 @@ __gshared Sprite sprCrateSmall, sprFloorMetalPlate, sprHazardWall, sprPacman, sp
 __gshared Box[] entities;
 __gshared bool overlay = false;
 __gshared Font font;
+__gshared Space space;
 
+enum MAXCOLLS = 32;
+enum MAXCONTS = 64;
 
 class Box : Entity
 {
@@ -33,6 +36,9 @@ class Box : Entity
         this.angle = Degrees(angle);
 
         shape = new Poly(physicsBody, 0.0, 0.0, verts);
+        shape.restitution = 0.25;
+        shape.friction = 0.75;
+
         physicsBody.mass = shape.mass(density);
         physicsBody.moment = shape.momentDensity(density);
         physicsBody.setPos(x, y);
@@ -111,6 +117,11 @@ void main()
     window.open(640, 480, 32, 0);
     window.title = "SIEGE D Physics Demo - Press F1 for debug overlay";
     window.FPSLimit = 60.0f;
+
+    space = Space.getDefault();
+    space.iterations = 10;
+    space.damping = 0.75;
+    space.setGravity(0.0, 25.0);
 
     sprCrateSmall = new Sprite("data/sprites/CrateSmall.png");
     sprFloorMetalPlate = new Sprite("data/sprites/FloorMetalPlate.png");

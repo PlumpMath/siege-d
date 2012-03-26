@@ -21,6 +21,7 @@ struct SGPhysicsShape
 {
     void* handle;
     SGPhysicsBody* _body;
+    void* data;
 
     SGenum type;
 
@@ -36,11 +37,20 @@ SGPhysicsShape* sgPhysicsShapeCreatePoly(SGPhysicsBody* _body, float x, float y,
 SGPhysicsShape* sgPhysicsShapeCreateCircle(SGPhysicsBody* _body, float x, float y, float r1, float r2);
 void sgPhysicsShapeDestroy(SGPhysicsShape* shape);
 
+void sgPhysicsShapeSetGroup(SGPhysicsShape* shape, SGuint group);
+SGuint sgPhysicsShapeGetGroup(SGPhysicsShape* shape);
+void sgPhysicsShapeSetFriction(SGPhysicsShape* shape, float friction);
+float sgPhysicsShapeGetFriction(SGPhysicsShape* shape);
+void sgPhysicsShapeSetRestitution(SGPhysicsShape* shape, float restitution);
+float sgPhysicsShapeGetRestitution(SGPhysicsShape* shape);
+void sgPhysicsShapeSetData(SGPhysicsShape* shape, void* data);
+void* sgPhysicsShapeGetData(SGPhysicsShape* shape);
+
 float sgPhysicsShapeGetAreaS(SGPhysicsShape* shape);
 float sgPhysicsShapeGetAreaU(SGPhysicsShape* shape);
 float sgPhysicsShapeGetMass(SGPhysicsShape* shape, float density);
 float sgPhysicsShapeGetMomentMass(SGPhysicsShape* shape, float mass);
 float sgPhysicsShapeGetMomentDensity(SGPhysicsShape* shape, float density);
 
+void sgPhysicsShapeGetBBox(SGPhysicsShape* shape, float* t, float* l, float* b, float* r);
 void sgPhysicsShapeDrawDBG(SGPhysicsShape* shape);
-
