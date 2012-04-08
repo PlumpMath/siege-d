@@ -73,7 +73,7 @@ class Sprite
         sgSpriteSetSpeed(handle, val);
     }
 
-    float speed()
+    float speed() @property
     {
         return sgSpriteGetSpeed(handle);
     }
