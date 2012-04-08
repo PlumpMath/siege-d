@@ -20,11 +20,11 @@ void positionPrev(out int x, out int y)
 {
     sgMouseGetPosPrev(&x, &y);
 }
-int prevX()
+int prevX() @property
 {
     return sgMouseGetPosPrevX();
 }
-int prevY()
+int prevY() @property
 {
     return sgMouseGetPosPrevY();
 }
@@ -33,20 +33,20 @@ void position(out int x, out int y)
 {
     sgMouseGetPos(&x, &y);
 }
-int x()
+int x() @property
 {
     return sgMouseGetPosX();
 }
-int y()
+int y() @property
 {
     return sgMouseGetPosY();
 }
 
-int wheelPrev()
+int wheelPrev() @property
 {
     return sgMouseGetWheelPrev();
 }
-int wheel()
+int wheel() @property
 {
     return sgMouseGetWheel();
 }
@@ -68,53 +68,53 @@ bool buttonRelease(uint button)
     return sgMouseGetButtonRelease(button);
 }
 
-bool buttonLeftPrev()
+bool buttonLeftPrev() @property
 {
     return sgMouseGetButtonLeftPrev();
 }
-bool buttonLeft()
+bool buttonLeft() @property
 {
     return sgMouseGetButtonLeft();
 }
-bool buttonLeftPress()
+bool buttonLeftPress() @property
 {
     return sgMouseGetButtonLeftPress();
 }
-bool buttonLeftRelease()
+bool buttonLeftRelease() @property
 {
     return sgMouseGetButtonLeftRelease();
 }
 
-bool buttonRightPrev()
+bool buttonRightPrev() @property
 {
     return sgMouseGetButtonRightPrev();
 }
-bool buttonRight()
+bool buttonRight() @property
 {
     return sgMouseGetButtonRight();
 }
-bool buttonRightPress()
+bool buttonRightPress() @property
 {
     return sgMouseGetButtonRightPress();
 }
-bool buttonRightRelease()
+bool buttonRightRelease() @property
 {
     return sgMouseGetButtonRightRelease();
 }
 
-bool buttonMiddlePrev()
+bool buttonMiddlePrev() @property
 {
     return sgMouseGetButtonMiddlePrev();
 }
-bool buttonMiddle()
+bool buttonMiddle() @property
 {
     return sgMouseGetButtonMiddle();
 }
-bool buttonMiddlePress()
+bool buttonMiddlePress() @property
 {
     return sgMouseGetButtonMiddlePress();
 }
-bool buttonMiddleRelease()
+bool buttonMiddleRelease() @property
 {
     return sgMouseGetButtonMiddleRelease();
 }
