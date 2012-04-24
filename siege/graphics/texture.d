@@ -45,6 +45,11 @@ class Texture
         sgTextureDestroy(handle);
     }
 
+    void data(uint width, uint height, SGenum bpp, void[] ptr)
+    {
+        sgTextureSetData(handle, width, height, bpp, ptr.ptr);
+    }
+
     void draw()
     {
         sgTextureDraw(handle);

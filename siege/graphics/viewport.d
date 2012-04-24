@@ -24,14 +24,17 @@ class Viewport
     {
         handle = sgViewportCreate4i4f(wposx, wposy, wsizex, wsizey, posx, posy, sizex, sizey);
     }
+
     this(uint wposx, uint wposy, uint wsizex, uint wsizey)
     {
         handle = sgViewportCreate4i(wposx, wposy, wsizex, wsizey);
     }
+
     this()
     {
         handle = sgViewportCreate();
     }
+
     ~this()
     {
         sgViewportDestroy(handle);
@@ -41,12 +44,23 @@ class Viewport
     {
         sgViewportSet4i4f(handle, wposx, wposy, wsizex, wsizey, posx, posy, sizex, sizey);
     }
+
     void set(uint wposx, uint wposy, uint wsizex, uint wsizey)
     {
         sgViewportSet4i(handle, wposx, wposy, wsizex, wsizey);
     }
+
     void reset()
     {
         sgViewportReset(handle);
     }
+
+    uint wposx() @property { return handle.wposx; }
+    uint wposy() @property { return handle.wposy; }
+    uint wsizex() @property { return handle.wsizex; }
+    uint wsizey() @property { return handle.wsizey; }
+    float posx() @property { return handle.posx; }
+    float posy() @property { return handle.posy; }
+    float sizex() @property { return handle.sizex; }
+    float sizey() @property { return handle.sizey; }
 }

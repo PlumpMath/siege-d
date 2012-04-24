@@ -63,7 +63,7 @@ class Sprite
         sgSpriteSetImage(handle, val);
     }
 
-    float image()
+    float image() @property
     {
         return sgSpriteGetImage(handle);
     }

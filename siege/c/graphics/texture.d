@@ -23,6 +23,7 @@ struct SGTexture
 
 SGTexture* sgTextureCreateFile(const char* fname);
 SGTexture* sgTextureCreateData(SGuint width, SGuint height, SGenum bpp, void* data);
+void sgTextureSetData(SGTexture* texture, size_t width, size_t height, SGenum bpp, void* data);
 SGTexture* sgTextureCreate(SGuint width, SGuint height, SGenum bpp);
 void sgTextureDestroy(SGTexture* texture);
 
