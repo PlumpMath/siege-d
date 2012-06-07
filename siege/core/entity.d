@@ -30,6 +30,7 @@ class Entity
 {
     this()
     {
+	mHandle = sgEntityCreate();
 	prepareHandle();
     }
 
