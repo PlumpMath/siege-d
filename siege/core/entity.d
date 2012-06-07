@@ -30,13 +30,7 @@ class Entity
 {
     this()
     {
-        this(0.0);
-    }
-
-    this(float priority)
-    {
-        mHandle = sgEntityCreate(priority);
-        prepareHandle();
+	prepareHandle();
     }
 
     ~this()
