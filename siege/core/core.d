@@ -49,6 +49,7 @@ bool loadModule(string name)
 
 private extern (C) void exitshim()
 {
+    sgEntityDestroyAll();
     sgDeinit();
 }
 

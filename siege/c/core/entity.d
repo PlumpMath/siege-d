@@ -124,6 +124,10 @@ SGbool _sgEntityDeinit();
 
 SGEntity* sgEntityCreate();
 SGvoid sgEntityDestroy(SGEntity*);
+SGvoid sgEntityDestroyAll();
+
+SGvoid sgEntitySetName(SGEntity*, const(char)*);
+const(char)* sgEntityGetName(SGEntity*);
 
 SGvoid sgEntitySetSprite(SGEntity*, SGSprite*);
 SGSprite* sgEntityGetSprite(SGEntity*);
