@@ -253,6 +253,15 @@ enum
     SG_MOUSE_BUTTON_MIDDLE = 3,
 }
 
+enum SG_DEPTH_NEVER = 0;
+enum SG_DEPTH_EQUAL = 1;
+enum SG_DEPTH_NOTEQUAL = 2;
+enum SG_DEPTH_LESS = 3;
+enum SG_DEPTH_LEQUAL = 4;
+enum SG_DEPTH_GREATER = 5;
+enum SG_DEPTH_GEQUAL = 6;
+enum SG_DEPTH_ALWAYS = 7;
+
 struct SGModuleInfo
 {
     SGushort vmajor;
