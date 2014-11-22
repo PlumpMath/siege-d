@@ -1,0 +1,5 @@
+*       text=auto
+
+*.d     text
+*.sh    text
+*.txt   text
